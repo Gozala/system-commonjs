@@ -1,7 +1,7 @@
 { "name": "system"
 , "version": "0.0.1"
 , "description": "CommonJS System/1.0 for nodejs"
-, "homepage": "http://github.com/Gozala/system-commonjs/"
+, "homepage": "http://wiki.commonjs.org/wiki/System"
 , "keywords": ["node", "commonjs", "system"]
 , "contributors":
   [ "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)" ]
