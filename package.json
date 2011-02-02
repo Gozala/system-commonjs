@@ -1,5 +1,5 @@
 { "name": "system"
-, "version": "0.0.4"
+, "version": "0.0.5"
 , "description": "CommonJS System/1.0 for nodejs"
 , "homepage": "http://wiki.commonjs.org/wiki/System"
 , "keywords": ["node", "commonjs", "system"]

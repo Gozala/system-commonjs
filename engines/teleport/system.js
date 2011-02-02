@@ -1,10 +1,10 @@
 'use strict'
 
 var env = {}
-,   args = []
-,   listeners = []
-,   params = window.location.search.substr(1).split('&')
-,   ignore = Function()
+  , args = []
+  , listeners = []
+  , params = window.location.search.substr(1).split('&')
+  , ignore = Function()
 
 for (var i = 0, ii = params.length; i < ii; i++) {
   var parts = params[i].split('=')
@@ -16,13 +16,21 @@ for (var i = 0, ii = params.length; i < ii; i++) {
   }
 }
 
-window.addEventListener('hashchange', function(e) {
+
+function onHashChange() {
   for (var i = 0, ii = listeners.length; i < ii; i++) {
     try {
       listeners[i](decodeURIComponent(window.location.hash.substr(1)))
-    } catch(e) {}
+    } catch(exception) {
+      console.error(exception)
+    }
   }
-}, false)
+}
+
+if ('addEventListener' in window)
+  window.addEventListener('hashchange', onHashChange, false)
+else
+  window.attachEvent('onhashchange', onHashChange)
 
 exports.engine = 'teleport'
 exports.env = env
